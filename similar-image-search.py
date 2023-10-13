@@ -7,7 +7,7 @@
 
 # 2.
 # install the dependencies
-# pip install opencv-python-headless scikit-learn scikit-learn-intelex argparse logging numpy
+# pip install opencv-python-headless scikit-learn scikit-learn-intelex argparse logging numpy pillow
 
 ###############
 #activate.bat
