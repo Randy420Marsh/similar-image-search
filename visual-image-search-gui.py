@@ -37,7 +37,7 @@ def calculate_similarity_score(hist1, hist2):
     return 1.0 / (1.0 + score)  # Convert distance to similarity
 
 # Function to find visually similar images
-def find_similar_images(input_image_path, search_folder, threshold=0.005, num_similar=5):
+def find_similar_images(input_image_path, search_folder, threshold=0.30, num_similar=10):
     input_hist = compute_histogram(input_image_path)
     if input_hist is None:
         return
