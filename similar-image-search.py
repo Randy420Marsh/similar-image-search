@@ -58,7 +58,7 @@
 
 import cv2
 import os
-import numpy np
+import numpy as np
 import argparse
 import logging
 import sys
