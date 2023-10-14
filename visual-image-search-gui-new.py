@@ -219,12 +219,12 @@ class SimilarImageSearchApp:
         if not self.canceled:
             messagebox.showinfo("Success", "Similar images search completed. Results are displayed below.")
 
-    def browse_input_image(self):
-        file_path = filedialog.askopenfilename()
-        if file_path:
-            self.input_image_path.set(file_path)
-            # Display the input image preview
-            self.display_input_image_preview(file_path)
+    def show_image_preview(self, event):
+        selected_indices = self.listbox.curselection()
+        if selected_indices:
+            selected_index = selected_indices[0]
+            selected_image_path = self.similar_images[int(selected_index)]
+            self.display_input_image_preview(selected_image_path)
 
     def display_input_image_preview(self, image_path):
         if self.input_image_preview is not None:
@@ -245,11 +245,11 @@ class SimilarImageSearchApp:
 
 if __name__ == "__main__":
     # Configure logging to save errors to a file
-    logging.basicConfig(filename='errors_log.txt', level=logging.WARNING,
+    logging.basicConfig(filename='errors_log_gui.txt', level=logging.WARNING,
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
     # Redirect standard error to the errors log file
-    sys.stderr = open('errors_log.txt', 'a')
+    sys.stderr = open('errors_log_gui.txt', 'a')
     
     root = tk.Tk()
     app = SimilarImageSearchApp(root)
